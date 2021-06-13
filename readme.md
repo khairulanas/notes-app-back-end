@@ -1,5 +1,10 @@
 ssh -i "neila-key.pem" ubuntu@ec2-54-210-171-108.compute-1.amazonaws.com
 
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+
+exit
+
+nvm install v14.15.4
 
 pm2 start npm --name "notes-api" -- run "start-prod" 
 
@@ -19,3 +24,5 @@ npm install eslint --save-dev
 npx eslint --init
 
 http://notesapp-v1.dicodingacademy.com/
+
+npm install pg
