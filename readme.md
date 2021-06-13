@@ -25,4 +25,7 @@ npx eslint --init
 
 http://notesapp-v1.dicodingacademy.com/
 
-npm install pg
+
+npm run migrate create "create table notes"
+
+npm run migrate up
