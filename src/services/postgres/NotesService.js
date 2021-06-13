@@ -1,6 +1,7 @@
 const { nanoid } = require('nanoid');
 const { Pool } = require('pg');
 const InvariantError = require('../../exceptions/InvariantError');
+const { mapDBToModel } = require('../../utils');
 
 class NotesService {
   constructor() {
@@ -23,6 +24,21 @@ class NotesService {
       throw new InvariantError('Catatan gagal ditambahkan');
     }
     return result.rows[0].id;
+  }
+
+  async getNotes() {
+    const result = await this._pool.query('SELECT * FROM notes');
+    return result.rows.map(mapDBToModel);
+  }
+
+  async getNoteById(id) {
+    const query = {
+      text: 'SELECT * FROM notes WHERE id=$1',
+      values: [id],
+    };
+
+    const result = await this._pool.query(query);
+    return result.rows.map(mapDBToModel)[0];
   }
 }
 
