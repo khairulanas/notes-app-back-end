@@ -29,3 +29,7 @@ http://notesapp-v1.dicodingacademy.com/
 npm run migrate create "create table notes"
 
 npm run migrate up
+
+npm run migrate create "create table users"
+
+npm run migrate up
