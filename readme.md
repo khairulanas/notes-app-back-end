@@ -33,3 +33,5 @@ npm run migrate up
 npm run migrate create "create table users"
 
 npm run migrate up
+
+npm install bcrypt
