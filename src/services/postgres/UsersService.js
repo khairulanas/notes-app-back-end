@@ -11,6 +11,19 @@ class UsersService {
     this.addUser = this.addUser.bind(this);
   }
 
+  async verifyNewUsername(username) {
+    const query = {
+      text: 'SELECT username FROM users WHERE username = $1',
+      values: [username],
+    };
+
+    const result = await this._pool.query(query);
+
+    if (result.rows.length > 0) {
+      throw new InvariantError('Gagal menambahkan user. Username sudah digunakan.');
+    }
+  }
+
   async addUser({ username, password, fullname }) {
     await this.verifyNewUsername(username);
 
@@ -29,17 +42,18 @@ class UsersService {
     return result.rows[0].id;
   }
 
-  async verifyNewUsername(username) {
+  async getUserById(userId) {
     const query = {
-      text: 'SELECT username FROM users WHERE username = $1',
-      values: [username],
+      text: 'SELECT id, username, fullname FROM users WHERE id = $1',
+      values: [userId],
     };
 
     const result = await this._pool.query(query);
 
-    if (result.rows.length > 0) {
-      throw new InvariantError('Gagal menambahkan user. Username sudah digunakan.');
+    if (!result.rows.length) {
+      throw new NotFoundError('User tidak ditemukan');
     }
+    return result.rows[0];
   }
 }
 
