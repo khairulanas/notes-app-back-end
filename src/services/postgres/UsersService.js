@@ -7,8 +7,6 @@ const NotFoundError = require('../../exceptions/NotFoundError');
 class UsersService {
   constructor() {
     this._pool = new Pool();
-
-    this.addUser = this.addUser.bind(this);
   }
 
   async verifyNewUsername(username) {
