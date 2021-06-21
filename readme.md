@@ -30,8 +30,14 @@ npm run migrate create "create table notes"
 
 npm run migrate up
 
+//v2---------------start
+
 npm run migrate create "create table users"
 
 npm run migrate up
 
 npm install bcrypt
+
+npm run migrate create "create table authentications"
+
+npm run migrate up
