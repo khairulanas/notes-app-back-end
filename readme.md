@@ -25,10 +25,21 @@ npx eslint --init
 
 http://notesapp-v1.dicodingacademy.com/
 
+//--------------------------------
+psql --username postgres
+
+CREATE USER loli WITH ENCRYPTED PASSWORD 'loli';
+
+CREATE DATABASE notesapp;
+
+GRANT ALL PRIVILEGES ON DATABASE notesapp TO loli;
+
+psql --username loli --dbname notesapp
 
 npm run migrate create "create table notes"
 
 npm run migrate up
+
 
 //v2---------------start
 
@@ -45,3 +56,5 @@ npm run migrate up
 npm install @hapi/jwt
 
 require('crypto').randomBytes(64).toString('hex');
+
+truncate notes, users, authentications;
