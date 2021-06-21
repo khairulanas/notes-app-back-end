@@ -41,3 +41,7 @@ npm install bcrypt
 npm run migrate create "create table authentications"
 
 npm run migrate up
+
+npm install @hapi/jwt
+
+require('crypto').randomBytes(64).toString('hex');
