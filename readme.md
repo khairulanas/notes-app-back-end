@@ -58,3 +58,7 @@ npm install @hapi/jwt
 require('crypto').randomBytes(64).toString('hex');
 
 truncate notes, users, authentications;
+
+npm run migrate create "add column owner to table notes"
+
+npm run migrate up
