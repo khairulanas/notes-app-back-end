@@ -62,3 +62,7 @@ truncate notes, users, authentications;
 npm run migrate create "add column owner to table notes"
 
 npm run migrate up
+
+npm run migrate create "add foreign key to owner column"
+
+npm run migrate up
