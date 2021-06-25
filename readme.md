@@ -43,6 +43,8 @@ npm run migrate up
 
 //v2---------------start
 
+http://notesapp-v2.dicodingacademy.com/login
+
 npm run migrate create "create table users"
 
 npm run migrate up
