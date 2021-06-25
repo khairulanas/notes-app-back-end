@@ -66,3 +66,7 @@ npm run migrate up
 npm run migrate create "add foreign key to owner column"
 
 npm run migrate up
+
+npm run migrate create "create collaborations table"
+
+npm run migrate up
