@@ -41,7 +41,7 @@ npm run migrate create "create table notes"
 npm run migrate up
 
 
-//v2---------------start
+//v2---------------
 
 http://notesapp-v2.dicodingacademy.com/login
 
@@ -72,3 +72,11 @@ npm run migrate up
 npm run migrate create "create collaborations table"
 
 npm run migrate up
+
+//v3----------------------
+
+rabbitmq-plugins.bat enable rabbitmq_management
+
+http://localhost:15672   //guest guest
+
+npm install amqplib
