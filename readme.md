@@ -80,3 +80,5 @@ rabbitmq-plugins.bat enable rabbitmq_management
 http://localhost:15672   //guest guest
 
 npm install amqplib
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types  //doc mime type
